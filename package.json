@@ -1,15 +1,16 @@
 {
-    "name": "generator-webapp-jade-sass",
+    "name": "loftschool-vk-friends-filter-homework",
     "version": "0.1.0",
-    "description": "A yo generator for jade and sass projects",
+    "description": "Loftschool vk friends filter homework",
     "keywords": [
-        "yeoman-generator",
-        "webapp",
-        "jade",
-        "sass"
+        "Loftschool",
+        "vk",
+        "friends",
+        "filter",
+        "homework"
     ],
-    "homepage": "https://github.com/dim2k2006/generator-jade-sass",
-    "bugs": "https://github.com/dim2k2006/generator-jade-sass/issues",
+    "homepage": "https://github.com/dim2k2006/loftschool-js-friendsfilter",
+    "bugs": "https://github.com/dim2k2006/loftschool-js-friendsfilter/issues",
     "author": {
         "name": "Dmitry",
         "email": "dim2k2006@yandex.ru",
@@ -76,7 +77,7 @@
     },
     "vendorScripts": {
         "path": [
-            "./src/bower_components/jquery/jquery.min.js"
+
         ]
     }
 }
