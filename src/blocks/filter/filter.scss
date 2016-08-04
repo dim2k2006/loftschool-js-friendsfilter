@@ -5,6 +5,10 @@ $filter: '.filter';
     display: inline-block;
     width: 620px;
 
+    @include respond-to('medium') {
+        width: 100%;
+    }
+
     &__logo {
         position: relative;
         display: block;
@@ -59,6 +63,10 @@ $filter: '.filter';
 
         &:hover {
             transform: rotate(180deg);
+
+            @include respond-to('increased') {
+                transform: rotate(0deg);
+            }
         }
 
         &:active {
@@ -100,6 +108,11 @@ $filter: '.filter';
         display: block;
         width: 50%;
         float: left;
+
+        @include respond-to('medium') {
+            width: 100%;
+            float: none;
+        }
     }
 
     &__col.col_1 {
@@ -195,6 +208,7 @@ $filter: '.filter';
         height: 323px;
         @include paddingHorizontal;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
     }
 
     &__list {
@@ -221,8 +235,16 @@ $filter: '.filter';
         cursor: -webkit-grab;
         @include transitionDefault;
 
+        @include f-last(1) {
+            border-bottom: none;
+        }
+
         &:hover {
             background-color: $color-gallery;
+
+            @include respond-to('increased') {
+                background-color: $color-white;
+            }
         }
     }
 
@@ -284,6 +306,10 @@ $filter: '.filter';
 
         &:hover {
             transform: rotate(180deg);
+
+            @include respond-to('increased') {
+                transform: rotate(0deg);
+            }
         }
 
         &:active {
@@ -324,6 +350,10 @@ $filter: '.filter';
 
         &:hover {
             transform: rotate(180deg);
+
+            @include respond-to('increased') {
+                transform: rotate(0deg);
+            }
         }
 
         &:active {
