@@ -55,6 +55,19 @@ $filter: '.filter';
         right: 5px;
         text-align: center;
         cursor: pointer;
+        @include transitionDefault;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+
+        &:active {
+            svg {
+                path {
+                    fill: darken($color-white, 10%);
+                }
+            }
+        }
 
         svg {
             position: absolute;
@@ -70,6 +83,7 @@ $filter: '.filter';
 
             path {
                 fill: $color-white;
+                @include transitionDefault;
             }
         }
     }
@@ -145,7 +159,13 @@ $filter: '.filter';
         color: $color-silver-chalice;
         border-radius: 15px;
         background-color: $color-white;
+        border: 1px solid $color-white;
         overflow: hidden;
+        @include transitionDefault;
+
+        &:focus {
+            border-color: $color-salmon;
+        }
     }
 
     &__title {
@@ -260,6 +280,19 @@ $filter: '.filter';
         height: 30px;
         top: 4px;
         right: -30px;
+        @include transitionDefault;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+
+        &:active {
+            svg {
+                path {
+                    fill: darken($color-silver, 10%);
+                }
+            }
+        }
 
         svg {
             position: absolute;
@@ -275,6 +308,7 @@ $filter: '.filter';
 
             path {
                 fill: $color-silver;
+                @include transitionDefault;
             }
         }
     }
@@ -286,6 +320,19 @@ $filter: '.filter';
         height: 30px;
         top: 4px;
         right: -30px;
+        @include transitionDefault;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+
+        &:active {
+            svg {
+                path {
+                    fill: darken($color-silver, 10%);
+                }
+            }
+        }
 
         svg {
             position: absolute;
@@ -301,6 +348,7 @@ $filter: '.filter';
 
             path {
                 fill: $color-silver;
+                @include transitionDefault;
             }
         }
     }
@@ -330,10 +378,17 @@ $filter: '.filter';
         padding-right: 15px;
         background-color: $color-salmon;
         border-radius: 10px;
+        @include transitionDefault;
 
         &:hover {
             color: $color-white;
             text-decoration: none;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+            background-color: darken($color-salmon, 5%);
+            box-shadow: none;
         }
     }
 }
