@@ -1,0 +1,339 @@
+$filter: '.filter';
+
+#{$filter} {
+    position: relative;
+    display: inline-block;
+    width: 620px;
+
+    &__logo {
+        position: relative;
+        display: block;
+        width: 102px;
+        height: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 21px;
+
+        img {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__container {
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: $color-white;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    &__header {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-top: 14px;
+        padding-bottom: 12px;
+        @include paddingHorizontal;
+        font-family: $font-family-medium;
+        font-size: $font-size-default;
+        line-height: $line-height-little;
+        color: $color-white;
+        background-color: $color-salmon;
+    }
+
+    &__close {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 5px;
+        text-align: center;
+        cursor: pointer;
+
+        svg {
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -7px;
+            margin-left: auto;
+            margin-right: auto;
+
+            path {
+                fill: $color-white;
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        display: block;
+        width: 100%;
+        @include clearfix;
+    }
+
+    &__col {
+        position: relative;
+        display: block;
+        width: 50%;
+        float: left;
+    }
+
+    &__col.col_1 {
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: $color-gallery;
+        }
+    }
+
+    &__search {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @include paddingHorizontal;
+        background-color: $color-gallery;
+    }
+
+    &__search__container {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 15px;
+            height: 15px;
+            top: 6px;
+            left: 8px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-image: url(../images/ico-search.svg);
+        }
+    }
+
+    &__search__input {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 26px;
+        outline: none;
+        border: none;
+        appearance: none;
+        padding-left: 28px;
+        font-family: $font-family-light;
+        font-size: $font-size-extrasmall;
+        line-height: 26px;
+        color: $color-silver-chalice;
+        border-radius: 15px;
+        background-color: $color-white;
+        overflow: hidden;
+    }
+
+    &__title {
+        position: relative;
+        display: block;
+        width: 100%;
+        @include paddingHorizontal;
+
+        span {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding-top: 13px;
+            padding-bottom: 5px;
+            font-family: $font-family-medium;
+            font-size: 12px;
+            line-height: $line-height-prelittle;
+            color: $color-emperor;
+            border-bottom: 1px solid $color-gallery;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 323px;
+        @include paddingHorizontal;
+        overflow-y: scroll;
+    }
+
+    &__list {
+        @include clearfix;
+    }
+
+    &__list,
+    &__item {
+        @include list-reset;
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+        border-bottom: 1px solid $color-gallery;
+        background-color: $color-white;
+        cursor: move;
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+        @include transitionDefault;
+
+        &:hover {
+            background-color: $color-gallery;
+        }
+    }
+
+    &__col.col_2 {
+        #{$filter} {
+            &__item {
+                cursor: default;
+            }
+        }
+    }
+
+    &__info {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 58px;
+    }
+
+    &__preview {
+        position: absolute;
+        display: block;
+        width: 45px;
+        height: 45px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 6px;
+        overflow: hidden;
+
+        img {
+            position: static;
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        font-family: $font-family-medium;
+        font-size: $font-size-extrasmall;
+        line-height: $line-height-prelittle;
+        color: $color-emperor;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__add {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: 4px;
+        right: -30px;
+
+        svg {
+            position: absolute;
+            display: block;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -8px;
+            margin-left: auto;
+            margin-right: auto;
+
+            path {
+                fill: $color-silver;
+            }
+        }
+    }
+
+    &__remove {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: 4px;
+        right: -30px;
+
+        svg {
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -7px;
+            margin-left: auto;
+            margin-right: auto;
+
+            path {
+                fill: $color-silver;
+            }
+        }
+    }
+
+    &__footer {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 45px;
+        @include paddingHorizontal;
+        line-height: 45px;
+        text-align: right;
+        background-color: $color-gallery;
+    }
+
+    &__save {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-family: $font-family-light;
+        font-size: $font-size-extrasmall;
+        line-height: $line-height-prelittle;
+        color: $color-white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $color-salmon;
+        border-radius: 10px;
+
+        &:hover {
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+}

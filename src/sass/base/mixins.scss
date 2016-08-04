@@ -1,3 +1,14 @@
+// Transition default
+@mixin transitionDefault {
+    transition: all .3s ease;
+}
+
+// Horizontal paddings
+@mixin paddingHorizontal {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 // Clearfix
 @mixin clearfix {
     &::after {
