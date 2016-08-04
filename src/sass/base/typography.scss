@@ -24,7 +24,7 @@ body {
     font-family: $font-family-regular;
     font-size: $font-size-default;
     line-height: $line-height-small;
-    color: $color-pickled-bluewood;
+    color: $color-black;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -46,7 +46,7 @@ iframe {
 h1 {
     font-weight: normal;
     font-family: $font-family-bold;
-    color: $color-pickled-bluewood;
+    color: $color-black;
 }
 
 h2,
@@ -55,8 +55,8 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    font-family: $font-family-extrabold;
-    color: $color-pickled-bluewood;
+    font-family: $font-family-bold;
+    color: $color-black;
 }
 
 h1 {
@@ -72,7 +72,7 @@ h1 {
 }
 
 h2 {
-    font-size: $font-size-prehuge;
+    font-size: $font-size-largeplus;
 
     @include respond-to('prebig') {
         font-size: $font-size-semilarge;
@@ -80,7 +80,7 @@ h2 {
 }
 
 h3 {
-    font-size: $font-size-afterlarge;
+    font-size: $font-size-large;
 }
 
 h4 {
@@ -100,11 +100,11 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: $color-mariner;
+    color: $color-salmon;
     text-decoration: none;
 
     &:hover {
-        color: lighten($color-mariner, 10%);
+        color: lighten($color-salmon, 10%);
         text-decoration: underline;
     }
 }
