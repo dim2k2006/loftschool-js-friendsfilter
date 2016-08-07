@@ -3,7 +3,7 @@
         +e('img')(src="images/logo.png")
 
     +e('div').container
-        +e('div').header Choose friends
+        +e('div').header Выберите друзей
             +e('a').close(href="#", data-action="close")
                 +e('img')(src="images/ico-close.svg")
 
@@ -11,20 +11,20 @@
             +e('div').col(class="col_1")
                 +e('div').search
                     +e('div').search__container
-                        +e('input').search__input(class="search__input_1", value="test string")
+                        +e('input').search__input(class="search__input_1", value="Начните вводить имя друга")
 
                 +e('div').title
-                    +e('span') Your friends
+                    +e('span') Ваши друзья
 
                 +e('div').content
 
             +e('div').col(class="col_2")
                 +e('div').search
                     +e('div').search__container
-                        +e('input').search__input(class="search__input_2", value="test string")
+                        +e('input').search__input(class="search__input_2", value="Начните вводить имя друга")
 
                 +e('div').title
-                    +e('span') Friends in list
+                    +e('span') Друзья в списке
 
                 +e('div').content
                     +e('ul').list
@@ -89,7 +89,7 @@
                                     +e('img')(src="images/ico-remove.svg")
 
         +e('div').footer
-            +e('a').save(href="#", data-action="save") Save
+            +e('a').save(href="#", data-action="save") Сохранить
 
 script(type="text/x-handlebars-template", id="listAllTemplate").
     <ul class="filter__list">
