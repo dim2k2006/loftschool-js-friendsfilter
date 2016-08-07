@@ -7,6 +7,9 @@
     var filter = {
         document: document,
         container: document.querySelector('.filter'),
+        listAll: document.querySelector('.filter__col.col_1 .filter__content'),
+        listCustom: document.querySelector('.filter__col.col_2 .filter__content'),
+        listTemplate: document.getElementById('listTemplate').innerHTML,
 
         setupListener: function() {
 
@@ -23,7 +26,7 @@
 
             data.then(function(response) {
 
-                __this.render(response);
+                __this.render(__this.listAll, __this.listTemplate, response);
 
             });
         }

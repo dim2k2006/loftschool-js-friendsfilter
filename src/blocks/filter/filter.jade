@@ -17,77 +17,6 @@
                     +e('span') Your friends
 
                 +e('div').content
-                    +e('ul').list
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
-                        +e('li').item
-                            +e('div').info
-                                +e('div').preview
-                                    +e('img')(src="images/vis-photo-1.png")
-
-                                +e('div').name Some very very very long name
-
-                                +e('a').add(href="#", data-action="add")
-                                    +e('img')(src="images/ico-add.svg")
-
 
             +e('div').col(class="col_2")
                 +e('div').search
@@ -162,3 +91,23 @@
         +e('div').footer
             +e('a').save(href="#", data-action="save") Save
 
+script(type="text/x-handlebars-template", id="listTemplate").
+    <ul class="filter__list">
+        {{#each list}}
+        <li class="filter__item">
+            <div class="filter__info">
+                <div class="filter__preview">
+                    <img src="{{photo_50}}">
+                </div>
+
+                <div class="filter__name">{{first_name}} {{last_name}}</div>
+
+                <a href="#" data-action="add" class="filter__add">
+                    <svg version="1.1" viewBox="0 0 42 42">
+                        <path d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21s2.224,5,4.941,5H16v11.059C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"></path>
+                    </svg>
+                </a>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
