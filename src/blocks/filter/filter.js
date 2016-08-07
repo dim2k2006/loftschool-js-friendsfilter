@@ -45,7 +45,6 @@
             data.then(function(response) {
 
                 __this.render(__this.listAll, __this.listAllTemplate, response);
-
                 __this.setupListener();
                 __this.label();
 
