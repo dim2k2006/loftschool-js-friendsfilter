@@ -157,6 +157,28 @@ $filter: '.filter';
         }
     }
 
+    &__search__container.inactive {
+        #{$filter} {
+            &__search__label {
+                display: block;
+            }
+        }
+    }
+
+    &__search__label {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 26px;
+        padding-left: 28px;
+        font-family: $font-family-light;
+        font-size: $font-size-extrasmall;
+        color: $color-silver-chalice;
+        line-height: 28px;
+        text-align: left;
+        z-index: 2;
+    }
+
     &__search__input {
         position: relative;
         display: block;

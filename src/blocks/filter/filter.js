@@ -7,7 +7,8 @@
         close = require('./modules/close'),
         add = require('./modules/add'),
         remove = require('./modules/remove'),
-        save = require('./modules/save');
+        save = require('./modules/save'),
+        label = require('./modules/label');
 
     var filter = {
         document: document,
@@ -16,6 +17,7 @@
         listCustom: document.querySelector('.filter__col.col_2 .filter__content'),
         listAllTemplate: document.getElementById('listAllTemplate').innerHTML,
         listCustomTemplate: document.getElementById('listCustomTemplate').innerHTML,
+        inputs: document.querySelectorAll('.filter__search__input'),
 
         setupListener: function() {
             this.container.addEventListener('click', this.action.bind(filter));
@@ -29,6 +31,7 @@
         add: add,
         remove: remove,
         save: save,
+        label: label,
         init: function() {
             var __this = this,
                 load = __this.load(),
@@ -40,6 +43,7 @@
                 __this.render(__this.listAll, __this.listAllTemplate, response);
 
                 __this.setupListener();
+                __this.label();
 
             });
         }

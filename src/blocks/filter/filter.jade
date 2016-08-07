@@ -11,7 +11,8 @@
             +e('div').col(class="col_1")
                 +e('div').search
                     +e('div').search__container
-                        +e('input').search__input(class="search__input_1", value="Начните вводить имя друга")
+                        +e('label').search__label(for="search__input_1") Начните вводить имя друга
+                        +e('input').search__input(class="search__input_1", id="search__input_1", value="")
 
                 +e('div').title
                     +e('span') Ваши друзья
@@ -21,7 +22,8 @@
             +e('div').col(class="col_2")
                 +e('div').search
                     +e('div').search__container
-                        +e('input').search__input(class="search__input_2", value="Начните вводить имя друга")
+                        +e('label').search__label(for="search__input_2") Начните вводить имя друга
+                        +e('input').search__input(class="search__input_2", id="search__input_2", value="")
 
                 +e('div').title
                     +e('span') Друзья в списке
