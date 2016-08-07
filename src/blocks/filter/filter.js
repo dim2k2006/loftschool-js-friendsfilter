@@ -8,7 +8,8 @@
         add = require('./modules/add'),
         remove = require('./modules/remove'),
         save = require('./modules/save'),
-        label = require('./modules/label');
+        label = require('./modules/label'),
+        search = require('./modules/search');
 
     var filter = {
         document: document,
@@ -21,6 +22,8 @@
 
         setupListener: function() {
             this.container.addEventListener('click', this.action.bind(filter));
+
+            this.container.addEventListener('keyup', this.action.bind(filter));
         },
         load: load,
         login: login,
@@ -32,6 +35,7 @@
         remove: remove,
         save: save,
         label: label,
+        search: search,
         init: function() {
             var __this = this,
                 load = __this.load(),
