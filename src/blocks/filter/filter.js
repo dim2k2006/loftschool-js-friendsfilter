@@ -1,16 +1,18 @@
-(function() {
-    var load = require('./modules/load'),
-        login = require('./modules/login'),
-        getData = require('./modules/getData'),
-        render = require('./modules/render'),
-        action = require('./modules/action'),
-        close = require('./modules/close'),
-        add = require('./modules/add'),
-        remove = require('./modules/remove'),
-        save = require('./modules/save'),
-        label = require('./modules/label'),
-        search = require('./modules/search');
+var modules = {
+    load: require('./modules/load'),
+    login: require('./modules/login'),
+    getData: require('./modules/getData'),
+    render: require('./modules/render'),
+    action: require('./modules/action'),
+    close: require('./modules/close'),
+    add: require('./modules/add'),
+    remove: require('./modules/remove'),
+    save: require('./modules/save'),
+    label: require('./modules/label'),
+    search: require('./modules/search')
+};
 
+(function(methods) {
     var filter = {
         document: document,
         container: document.querySelector('.filter'),
@@ -25,17 +27,17 @@
 
             this.container.addEventListener('keyup', this.action.bind(filter));
         },
-        load: load,
-        login: login,
-        getData: getData,
-        render: render,
-        action: action,
-        close: close,
-        add: add,
-        remove: remove,
-        save: save,
-        label: label,
-        search: search,
+        load: methods.load,
+        login: methods.login,
+        getData: methods.getData,
+        render: methods.render,
+        action: methods.action,
+        close: methods.close,
+        add: methods.add,
+        remove: methods.remove,
+        save: methods.save,
+        label: methods.label,
+        search: methods.search,
         init: function() {
             var __this = this,
                 load = __this.load(),
@@ -55,4 +57,4 @@
     if (filter.container) {
         filter.init();
     }
-})();
+})(modules);
