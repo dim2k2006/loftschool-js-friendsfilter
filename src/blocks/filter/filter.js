@@ -47,10 +47,42 @@ var modules = {
                 data = login.then(__this.getData.bind(filter));
 
             data.then(function(response) {
+                var savedData = localStorage.getItem("savedData"),
+                    listCustomLength = '';
 
                 __this.listAllData = response;
 
+                if (savedData) {
+
+                    __this.listCustomData = JSON.parse(savedData);
+                    listCustomLength = __this.listCustomData.length;
+
+                    __this.listAllData = __this.listAllData.filter(function(item) {
+                        var n = 0,
+                            found = false;
+
+                        for (n; n < listCustomLength; n++) {
+
+                            if (item.user_id === __this.listCustomData[n].user_id) {
+
+                                found = true;
+
+                            }
+
+                        }
+
+                        if (!found) {
+
+                            return item;
+
+                        }
+                    });
+
+                }
+
                 __this.render(__this.listAll, __this.listAllTemplate, __this.listAllData);
+                __this.render(__this.listCustom, __this.listCustomTemplate, __this.listCustomData);
+                
                 __this.setupListener();
                 __this.label();
 

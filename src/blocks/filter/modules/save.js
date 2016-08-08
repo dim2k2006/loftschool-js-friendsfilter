@@ -1,7 +1,9 @@
 var save = function(event) {
     event.preventDefault();
 
-    console.log('save');
+    localStorage.setItem("savedData", JSON.stringify(this.listCustomData));
+
+    alert('Сохранено!');
 };
 
 module.exports = save;
