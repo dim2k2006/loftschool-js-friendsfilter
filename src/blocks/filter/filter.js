@@ -21,6 +21,8 @@ var modules = {
         listAllTemplate: document.getElementById('listAllTemplate').innerHTML,
         listCustomTemplate: document.getElementById('listCustomTemplate').innerHTML,
         inputs: document.querySelectorAll('.filter__search__input'),
+        listAllData: [],
+        listCustomData: [],
 
         setupListener: function() {
             this.container.addEventListener('click', this.action.bind(filter));
@@ -46,7 +48,9 @@ var modules = {
 
             data.then(function(response) {
 
-                __this.render(__this.listAll, __this.listAllTemplate, response);
+                __this.listAllData = response;
+
+                __this.render(__this.listAll, __this.listAllTemplate, __this.listAllData);
                 __this.setupListener();
                 __this.label();
 
