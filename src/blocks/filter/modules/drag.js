@@ -85,7 +85,10 @@ var drag = function() {
             avatar.style.position = old.position;
             avatar.style.left = old.left;
             avatar.style.top = old.top;
-            avatar.style.zIndex = old.zIndex
+            avatar.style.zIndex = old.zIndex;
+            avatar.style.removeProperty('width');
+            avatar.style.removeProperty('pointer-events');
+            avatar.classList.remove('active');
         };
 
         return avatar;
@@ -108,7 +111,7 @@ var drag = function() {
         if (dropElem) {
             console.log('... успешный перенос ...');
         } else {
-            console.log('... отмена переноса ...');
+            dragObject.avatar.rollback();
         }
     }
 
