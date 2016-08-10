@@ -287,6 +287,19 @@ $filter: '.filter';
             &__item {
                 cursor: default;
             }
+
+            &__content {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: none;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border: 2px dashed $color-salmon;
+                }
+            }
         }
     }
 
@@ -454,6 +467,20 @@ $filter: '.filter';
         &:active {
             background-color: darken($color-salmon, 5%);
             box-shadow: none;
+        }
+    }
+}
+
+#{$filter}.isDragging {
+    #{$filter} {
+        &__col.col_2 {
+            #{$filter} {
+                &__content {
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }

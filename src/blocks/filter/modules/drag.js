@@ -1,5 +1,6 @@
 var drag = function() {
-    var dragObject = {};
+    var __this = this,
+        dragObject = {};
 
     document.addEventListener('mousedown', function(event) {
         if (event.which != 1) return;
@@ -11,6 +12,8 @@ var drag = function() {
 
         dragObject.downX = event.pageX;
         dragObject.downY = event.pageY;
+
+        __this.container.classList.add('isDragging');
 
         return false;
     });
@@ -62,6 +65,8 @@ var drag = function() {
         }
 
         dragObject = {};
+
+        __this.container.classList.remove('isDragging');
     });
 
     function createAvatar(event) {
