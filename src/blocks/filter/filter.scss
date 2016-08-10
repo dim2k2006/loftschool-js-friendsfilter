@@ -255,7 +255,7 @@ $filter: '.filter';
         cursor: grab;
         cursor: -moz-grab;
         cursor: -webkit-grab;
-        @include transitionDefault;
+        transition: background-color .3s ease;
 
         @include f-last(1) {
             border-bottom: none;
@@ -273,6 +273,13 @@ $filter: '.filter';
     &__item.active {
         background-color: $color-gallery;
         box-shadow: 0 2px 10px 0 rgba(0,0,0,.4);
+
+        #{$filter} {
+            &__add {
+                opacity: .2;
+                pointer-events: none;
+            }
+        }
     }
 
     &__col.col_2 {
