@@ -9,7 +9,8 @@ var modules = {
     remove: require('./modules/remove'),
     save: require('./modules/save'),
     label: require('./modules/label'),
-    search: require('./modules/search')
+    search: require('./modules/search'),
+    drag: require('./modules/drag')
 };
 
 (function(methods) {
@@ -40,6 +41,7 @@ var modules = {
         save: methods.save,
         label: methods.label,
         search: methods.search,
+        drag: methods.drag,
         init: function() {
             var __this = this,
                 load = __this.load(),
@@ -82,9 +84,10 @@ var modules = {
 
                 __this.render(__this.listAll, __this.listAllTemplate, __this.listAllData);
                 __this.render(__this.listCustom, __this.listCustomTemplate, __this.listCustomData);
-                
+
                 __this.setupListener();
                 __this.label();
+                __this.drag();
 
             });
         }
