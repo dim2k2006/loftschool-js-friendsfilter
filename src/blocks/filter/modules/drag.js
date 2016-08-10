@@ -13,8 +13,6 @@ var drag = function() {
         dragObject.downX = event.pageX;
         dragObject.downY = event.pageY;
 
-        __this.container.classList.add('isDragging');
-
         return false;
     });
 
@@ -65,8 +63,6 @@ var drag = function() {
         }
 
         dragObject = {};
-
-        __this.container.classList.remove('isDragging');
     });
 
     function createAvatar(event) {
@@ -106,10 +102,12 @@ var drag = function() {
     }
 
     function finishDrag(event) {
-        var dropElem = findDroppable(event);
+        var dropElem = findDroppable(event),
+            target = dragObject.elem.querySelector('.filter__add');
 
         if (dropElem) {
-            console.log('... успешный перенос ...');
+            dragObject.avatar.remove();
+            __this.add(event, target);
         } else {
             dragObject.avatar.rollback();
         }
