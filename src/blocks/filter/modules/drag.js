@@ -52,8 +52,6 @@ var drag = function() {
         dragObject.avatar.style.left = event.pageX - dragObject.shiftX + 'px';
         dragObject.avatar.style.top = event.pageY - dragObject.shiftY + 'px';
 
-        // dragObject.avatar.style.transform = 'translate3d('+ left +'px, '+ top +'px, 0px)';
-
         return false;
     });
 
